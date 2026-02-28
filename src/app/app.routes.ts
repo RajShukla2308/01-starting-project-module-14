@@ -17,7 +17,10 @@ export const appRoutes: Routes = [
     {
         path: 'users/:userId',
         component: UserTasksComponent,
-        children:userRotes
+        children:userRotes,
+        data: {
+            message: 'Hello!'
+        }
     }
 
 ]

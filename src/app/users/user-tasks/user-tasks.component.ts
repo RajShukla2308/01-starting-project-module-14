@@ -12,6 +12,7 @@ import { Subscription } from 'rxjs';
 })
 export class UserTasksComponent implements OnInit{
   // userId = input.required<string>();
+  message = input.required<string>();
 
   private usersService = inject(UsersService);
   private activatedRoute = inject(ActivatedRoute);
@@ -25,6 +26,7 @@ export class UserTasksComponent implements OnInit{
 
 
   ngOnInit(): void {
+    console.log('static data',this.message())
     const subscription: Subscription = this.activatedRoute.paramMap.subscribe({
       next: (paramMap) =>{
         this.userName = this.usersService.users.find(u=> u.id == paramMap.get('userId'))?.name || ''
