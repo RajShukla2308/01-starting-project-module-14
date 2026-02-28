@@ -29,7 +29,7 @@ export const appRoutes: Routes = [
         path: 'users/:userId',
         component: UserTasksComponent,
         children:userRotes,
-        canMatch: [dummyCanMatch],
+       // canMatch: [dummyCanMatch],
         data: {
             message: 'Hello!'
         },
