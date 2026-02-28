@@ -1,6 +1,8 @@
-import { provideRouter } from "@angular/router";
+import { provideRouter, withComponentInputBinding } from "@angular/router";
 import { appRoutes } from "./app.routes";
 
 export const appConfig = {
-    providers:[provideRouter(appRoutes)]
+    providers:[
+        provideRouter(appRoutes,withComponentInputBinding())
+    ]
 }
