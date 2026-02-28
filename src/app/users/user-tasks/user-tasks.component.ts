@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
   styleUrl: './user-tasks.component.css',
   imports: [RouterOutlet, RouterLink],
 })
-export class UserTasksComponent{
+export class UserTasksComponent implements OnInit{
   // userId = input.required<string>();
   message = input.required<string>();
 
@@ -38,6 +38,14 @@ export class UserTasksComponent{
 
   // this.destroyRef.onDestroy(()=>subscription?.unsubscribe())
   // }
+
+
+  // subscribing activatedRoute's data property
+  ngOnInit(): void {
+    this.activatedRoute.data.subscribe({
+      next: data=> console.log(data) // will give static and dynamic both data.
+    })
+  }
 
 }
 
