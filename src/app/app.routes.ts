@@ -9,7 +9,9 @@ import { NewTaskComponent } from "./tasks/new-task/new-task.component";
 export const appRoutes: Routes = [
     {
         path:'',
-        component: NoTaskComponent
+       // component: NoTaskComponent,
+       redirectTo: 'users/u1/tasks',
+       pathMatch: 'full'
     },
     // {
     //     path:'tasks',
@@ -19,6 +21,11 @@ export const appRoutes: Routes = [
         path: 'users/:userId',
         component: UserTasksComponent,
         children:[
+            {
+                path: '',
+                redirectTo: 'tasks',
+                pathMatch: 'full'
+            },
             {
                 path:'tasks',
                 component: TasksComponent
