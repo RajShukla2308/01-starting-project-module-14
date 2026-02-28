@@ -1,5 +1,5 @@
 import { Routes } from "@angular/router";
-import { UserTasksComponent } from "./users/user-tasks/user-tasks.component";
+import { resolveUserName, UserTasksComponent } from "./users/user-tasks/user-tasks.component";
 import { routes as userRotes} from './users/users.routes';
 
 
@@ -20,6 +20,9 @@ export const appRoutes: Routes = [
         children:userRotes,
         data: {
             message: 'Hello!'
+        },
+        resolve: {
+            userName: resolveUserName
         }
     }
 
